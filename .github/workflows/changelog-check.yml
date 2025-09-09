@@ -1,0 +1,17 @@
+name: Changelog Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Ensure CHANGELOG was modified
+        run: |
+          if ! git diff --name-only origin/main...HEAD | grep -q "CHANGELOG.md"; then
+            echo "CHANGELOG.md must be updated for this PR."
+            exit 1
+          fi
