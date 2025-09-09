@@ -1,5 +1,8 @@
 # Changelog
 (Track changes by release: added, fixed, improved, etc.)
 
-## [added]
-- Initial setup of project files.
+## [v1.0.0] - 2025-09-09
+- Initial dummy release for practice.
+
+
+
